@@ -1,0 +1,42 @@
+## 📄 Document Content
+
+* [cite_start]**Exp#1:** Fingerprint spoof detection system based on **two-class support vector machine (SVM)**[cite: 1].
+* [cite_start]**Dataset:** Spoof\_data[cite: 2].
+* [cite_start]**Training:** Training dataset (both **live and spoof**) should be used for **SVM training**[cite: 3].
+* [cite_start]**Testing:** Trained SVM is tested on test dataset (both **live and spoof**)[cite: 4].
+* [cite_start]**Feature Extraction:** Use **LBP** and **HOG** algorithms to convert the images into its representative **1-D feature vector** before training and testing[cite: 5].
+
+---
+
+### Feature Extraction Code Snippets
+
+**HOG:**
+[cite_start]`fd, hog_image hog(img, orientations=9, pixels_per_cell $=(8,8)$, cells_per_block= $(2,2),$ visualize True, channel_axis=-1)` [cite: 9]
+
+**LBP:**
+* [cite_start]`radius $=3$` [cite: 10]
+* [cite_start]`n_points $=8$ * radius` [cite: 11]
+* [cite_start]`METHOD = 'uniform'` [cite: 12]
+* [cite_start]`from skimage.color import rgb2gray` [cite: 13]
+* [cite_start]`img = rgb2gray(img)` [cite: 14]
+* [cite_start]`1bp` [cite: 15]
+* [cite_start]`res` [cite: 16]
+* [cite_start]`local_binary_pattern(img, n_points, radius, METHOD)` [cite: 17]
+* [cite_start]`= lbp.flatten()` [cite: 18]
+* [cite_start]`$fd=$ res.tolist()` [cite: 19]
+
+---
+
+### Deliverables
+
+1.  [cite_start]**Code** (50 points) [cite: 7]
+2.  [cite_start]**Report** outlining the steps performed and the results obtained (50 points)[cite: 20]. The report should include:
+    * [cite_start]**Confusion Matrix** [cite: 21]
+    * [cite_start]**Mattews Correlation Coefficient** [cite: 21]
+    * [cite_start]**Accuracy** [cite: 21]
+    * [cite_start]**Sensitivity** [cite: 21]
+    * [cite_start]**Specificity** [cite: 21]
+    * [cite_start]**PRECISION** [cite: 21]
+    * [cite_start]**F1 Score** [cite: 21]
+
+---
